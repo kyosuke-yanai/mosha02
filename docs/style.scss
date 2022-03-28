@@ -1,0 +1,113 @@
+/* デザインA（スマートフォン） */
+
+@mixin base__wrapper {
+    margin: 0 auto;
+    max-width: 90%;
+    @media screen and (min-width: 600px) {
+        max-width: 85%;
+    }
+    @media screen and (min-width: 1025px) {
+        max-width: 80%;
+    }
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    .header__wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        @include base__wrapper();
+        .header__ttl {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        //ハンバーガーメニュー　参考「https://coco-factory.jp/ugokuweb/move01/5-2-1/」
+        .header__menubtn {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            span {
+                z-index: 10;
+                display: inline-block;
+                transition: all .4s;
+                position: absolute;
+                left: 14px;
+                height: 3px;
+                border-radius: 2px;
+                background: #333;
+                width: 45%;
+            }
+            span:nth-of-type(1) {
+                top: 15px;
+            }
+            span:nth-of-type(2) {
+                top: 23px;
+            }
+            span:nth-of-type(3) {
+                top: 31px;
+            }
+        }
+        .header__menubtn.active {
+            span:nth-of-type(1) {
+                top: 18px;
+                left: 18px;
+                //参考「https://developer.mozilla.org/ja/docs/Web/CSS/transform-function/rotate」
+                transform: translateY(6px) rotate(-45deg);
+                width: 40%;
+                background: #ffffff;
+            }
+            span:nth-of-type(2) {
+                opacity: 0;
+            }
+            span:nth-of-type(3) {
+                top: 30px;
+                left: 18px;
+                transform: translateY(-6px) rotate(45deg);
+                width: 40%;
+                background: #ffffff;
+            }
+        }
+    }
+    .header__nav {
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(51, 51, 51, 0.8);
+        color: #ffffff;
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: .5s;
+        .nav__items {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            li {
+                padding: 10px 0;
+            }
+        }
+    }
+    .header__nav.active {
+        z-index: 1;
+        opacity: 1;
+        transform: translateX(0%);
+        transition: .5s;
+    }
+}
+
+
+/* デザインB（タブレット） */
+
+@media screen and (min-width: 600px) {}
+
+
+/* デザインC(PC) */
+
+@media screen and (min-width: 1025px) {}

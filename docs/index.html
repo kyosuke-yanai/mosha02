@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="コーディング練習サイトです">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <title>模写コーディング</title>
+</head>
+
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="header__wrap">
+                <h1 class="header__ttl"><a href="">Furniture Design</a></h1>
+                <button class="header__menubtn" v-on:click="menu_flg=!menu_flg" :class="{'active':menu_flg}">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <nav class="header__nav" :class="{'active':menu_flg}">
+                <ul class="nav__items">
+                    <li>PRODUCTS</li>
+                    <li>ABOUT</li>
+                    <li>COMPANY</li>
+                    <li>CONTACT</li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+
+        </main>
+
+        <footer class="footer">
+
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                menu_flg: false,
+            }
+        })
+    </script>
+</body>
+
+</html>

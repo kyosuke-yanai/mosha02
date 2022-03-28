@@ -1,0 +1,132 @@
+@charset "UTF-8";
+/* デザインA（スマートフォン） */
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.header .header__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+@media screen and (min-width: 600px) {
+  .header .header__wrap {
+    max-width: 85%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .header .header__wrap {
+    max-width: 80%;
+  }
+}
+
+.header .header__wrap .header__ttl {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.header .header__wrap .header__menubtn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.header .header__wrap .header__menubtn span {
+  z-index: 10;
+  display: inline-block;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: #333;
+  width: 45%;
+}
+
+.header .header__wrap .header__menubtn span:nth-of-type(1) {
+  top: 15px;
+}
+
+.header .header__wrap .header__menubtn span:nth-of-type(2) {
+  top: 23px;
+}
+
+.header .header__wrap .header__menubtn span:nth-of-type(3) {
+  top: 31px;
+}
+
+.header .header__wrap .header__menubtn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  -webkit-transform: translateY(6px) rotate(-45deg);
+          transform: translateY(6px) rotate(-45deg);
+  width: 40%;
+  background: #ffffff;
+}
+
+.header .header__wrap .header__menubtn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.header .header__wrap .header__menubtn.active span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  -webkit-transform: translateY(-6px) rotate(45deg);
+          transform: translateY(-6px) rotate(45deg);
+  width: 40%;
+  background: #ffffff;
+}
+
+.header .header__nav {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.8);
+  color: #ffffff;
+  opacity: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.header .header__nav .nav__items {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+.header .header__nav .nav__items li {
+  padding: 10px 0;
+}
+
+.header .header__nav.active {
+  z-index: 1;
+  opacity: 1;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+/* デザインB（タブレット） */
+/* デザインC(PC) */
+/*# sourceMappingURL=style.css.map */
